@@ -1,0 +1,16 @@
+public class RecurMassiv {
+    public static void main(String[] args) {
+        int[] a = {1, 2, 3, 4, 5, 6, 1, 1}; //23
+        System.out.println(sumArrayElements(a, 0, 8));
+
+    }
+
+    public static int sumArrayElements(int[] a, int first, int last) {
+        if (first == last - 1) {
+            return a[first];
+        } else {
+            int mid = (first + last) / 2;
+            return sumArrayElements(a, first, mid) + sumArrayElements(a, mid, last);
+        }
+    }
+}
